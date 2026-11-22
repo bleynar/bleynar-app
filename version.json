@@ -1,8 +1,8 @@
 {
-  "versionCode": 17,
-  "versionName": "1.5.7",
-  "releaseUrl": "https://github.com/bleynar/bleynar-app/releases/tag/v1.5.7",
-  "downloadUrl": "https://github.com/bleynar/bleynar-app/releases/download/v1.5.7/Bleynar-1.5.7.apk",
-  "updateUrl": "https://bleynar.github.io/bleynar-app/downloads/Bleynar.apk?v=17",
-  "sha256": "84353ac3cd2b3a3b0d9b2de9942576728de05d6472ec1f52bfb35bea350a9deb"
+  "versionCode": 18,
+  "versionName": "1.6.0",
+  "releaseUrl": "https://github.com/bleynar/bleynar-app/releases/tag/v1.6.0",
+  "downloadUrl": "https://github.com/bleynar/bleynar-app/releases/download/v1.6.0/Bleynar-1.6.0.apk",
+  "updateUrl": "https://bleynar.github.io/bleynar-app/downloads/Bleynar.apk?v=18",
+  "sha256": "4b103d00afdd0aafe8c39da9a1143205fa0320f0d9cfb7e356afb12abcaf3eb8"
 }
