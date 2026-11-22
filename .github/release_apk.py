@@ -7,6 +7,7 @@ import json
 import os
 import re
 import shutil
+import ssl
 import subprocess
 import sys
 import tempfile
@@ -51,10 +52,12 @@ def android_tool(name):
 
 
 def apk_filename(apk, release):
-    info = subprocess.check_output([android_tool("apksigner"), "verify", "--print-certs", apk], text=True)
-    certs = re.findall(r"^Signer #\d+ certificate SHA-256 digest: ([0-9a-f]+)$", info, re.M)
-    if certs != [CERTIFICATE]:
-        raise ValueError("APK certificate differs from the Bleynar release certificate")
+    signer = android_tool("apksigner")
+    info = subprocess.check_output([signer, "verify", "--print-certs-pem", apk], text=True)
+    pem_blocks = re.findall(r"-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----", info, re.S)
+    fingerprints = {hashlib.sha256(ssl.PEM_cert_to_DER_cert(pem)).hexdigest() for pem in pem_blocks}
+    if fingerprints != {CERTIFICATE}:
+        raise ValueError(f"Unexpected APK certificate ({signer}): {sorted(fingerprints)}")
     badging = subprocess.check_output([android_tool("aapt"), "dump", "badging", apk], text=True)
     package = re.search(r"^package: name='([^']+)' versionCode='([0-9]+)' versionName='([^']+)'", badging, re.M)
     if not package or package[1] != PACKAGE or int(package[2]) < 1:
