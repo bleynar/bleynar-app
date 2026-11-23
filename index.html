@@ -53,21 +53,23 @@
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0" },
         "author": { "@id": "https://bleynar.github.io/bleynar-app/#channel" },
-        "image": "https://bleynar.github.io/bleynar-app/assets/bleynar-brand.png"
+        "image": "https://bleynar.github.io/bleynar-app/assets/bleynar-brand.png",
+        "downloadUrl": "https://bleynar.github.io/bleynar-app/downloads/Bleynar.apk"
       }
     ]
   }
   </script>
   <link rel="icon" href="assets/icon.png?brand=2">
   <link rel="stylesheet" href="assets/style.css?layout=5">
-
+  <script src="assets/site.js" defer></script>
+  <script src="assets/downloads.js" defer></script>
 </head>
 <body>
   <header class="mast">
     <div class="wrap nav">
       <a class="wordmark" href="./" aria-label="Bleynar, главная"><img src="assets/icon.png?brand=2" width="36" height="36" alt="">Bleynar</a>
       <nav aria-label="Навигация">
-        <a class="install-link" href="#install">Статус выпуска</a>
+        <a class="install-link" href="#install">Установка</a>
         <a class="yt" href="https://www.youtube.com/@Bleynar"><span class="play" aria-hidden="true"></span>YouTube</a>
       </nav>
     </div>
@@ -80,7 +82,12 @@
           <h1 id="app-name">Bleynar <span>для Android</span></h1>
           <div class="details">
             <p class="lede">Видео, Shorts и&nbsp;записи <a href="#channel">канала Bleynar</a> в&nbsp;одной ленте без входа в&nbsp;аккаунт. Получайте уведомления о&nbsp;новых публикациях и&nbsp;открывайте ролики в&nbsp;YouTube одним касанием.</p>
-            <p class="lede" role="status"><strong>Загрузка временно приостановлена.</strong> Проверяем предупреждение Google Play Защиты для Bleynar 1.7.0.</p>
+            <div class="downloads">
+              <a class="download" data-download href="https://bleynar.github.io/bleynar-app/downloads/Bleynar.apk?v=20" download="Bleynar-1.7.1.apk">Скачать APK</a>
+              <a class="release-link" data-release href="https://github.com/bleynar/bleynar-app/releases/tag/v1.7.1">О релизе на GitHub</a>
+            </div>
+            <p class="download-stats" role="status">Уникальные скачивания <strong id="download-total">—</strong></p>
+            <p class="release"><span>Версия <b data-version>1.7.1</b></span><span data-size>7,6 МБ</span><span>Android 5.0+</span></p>
           </div>
         </div>
         <div class="visual" aria-hidden="true">
@@ -94,8 +101,23 @@
     </section>
     <section class="setup wrap" id="install" aria-labelledby="install-heading">
       <div class="how">
-        <h2 id="install-heading">Если вы установили 1.7.0</h2>
-        <p>Откройте Play Маркет, нажмите значок профиля и выберите «Play Защита». Если Google предлагает удалить Bleynar, воспользуйтесь этой кнопкой. Оставьте Play Защиту включённой.</p>
+        <h2 id="install-heading">Как установить</h2>
+        <ol role="list">
+          <li><span class="step-number" aria-hidden="true">1</span><span>Скачайте APK и откройте файл в загрузках браузера.</span></li>
+          <li><span class="step-number" aria-hidden="true">2</span><span>Если Android попросит разрешение, разрешите установку для этого браузера и вернитесь к файлу.</span></li>
+          <li><span class="step-number" aria-hidden="true">3</span><span>Нажмите «Установить». Если Bleynar уже есть на устройстве, выберите «Обновить», чтобы сохранить свои настройки.</span></li>
+          <li><span class="step-number" aria-hidden="true">4</span><span>С версии 1.7.1 по кнопке «Обновить» браузер скачивает новый APK с этого сайта. Откройте файл и подтвердите обновление в окне Android. После установки скачанные APK можно удалить из папки «Загрузки», чтобы освободить место.</span></li>
+        </ol>
+        <p>При первом запуске разрешите уведомления одним нажатием. Bleynar подключит быструю доставку через сервисы Google, если они есть на телефоне, и запустит проверку канала в фоне. Изменить выбор можно через колокольчик.</p>
+      </div>
+      <div class="integrity">
+        <div class="file-title">
+          <img src="assets/icon.png?brand=2" alt="" width="48" height="48">
+          <div><h2>Файл приложения</h2><p data-filename>Bleynar-1.7.1.apk</p></div>
+        </div>
+        <div class="hashline"><span>Контрольная сумма SHA-256</span><button id="copy" type="button" aria-label="Скопировать SHA-256">Скопировать</button></div>
+        <code id="checksum">4f75f6d63a7f772fbe214b11c6f4f2aea7a3bfd7f1f350f45f404e4fdfc1164e</code>
+        <span id="copy-status" role="status"></span>
       </div>
     </section>
     <section class="channel" id="channel" aria-labelledby="channel-heading">
