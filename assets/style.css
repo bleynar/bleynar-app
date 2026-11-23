@@ -229,34 +229,14 @@ h1 span {
   color: #9295a9;
 }
 
-.download-stats { margin-top: .9rem; max-width: 43ch; color: var(--muted); }
-.download-stats summary {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: .45rem;
-  width: fit-content;
-  min-height: 2.35rem;
-  cursor: pointer;
-  list-style: none;
+.download-stats {
+  margin-top: .9rem;
+  color: var(--muted);
   font-size: .9375rem;
+  line-height: 1.55;
 }
-.download-stats summary::-webkit-details-marker { display: none; }
-.download-stats summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .download-stats strong { color: var(--text); font-variant-numeric: tabular-nums; }
-.stats-info {
-  display: inline-grid;
-  place-items: center;
-  width: 1.05rem;
-  height: 1.05rem;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  font-size: .75rem;
-  font-weight: 600;
-}
-.download-stats summary:hover, .download-stats[open] summary { color: var(--gold); }
-.download-stats p { margin: .25rem 0 .7rem; font-size: .9rem; line-height: 1.55; }
-.download-stats + .release { margin-top: .25rem; }
+.download-stats + .release { margin-top: .4rem; }
 .download[aria-busy="true"] { cursor: progress; }
 
 /* Both the orbit and the portrait use this square as their coordinate system. */
