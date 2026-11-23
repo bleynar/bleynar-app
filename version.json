@@ -1,8 +1,5 @@
 {
   "versionCode": 19,
   "versionName": "1.7.0",
-  "releaseUrl": "https://github.com/bleynar/bleynar-app/releases/tag/v1.7.0",
-  "downloadUrl": "https://github.com/bleynar/bleynar-app/releases/download/v1.7.0/Bleynar-1.7.0.apk",
-  "updateUrl": "https://bleynar.github.io/bleynar-app/downloads/Bleynar.apk?v=19",
-  "sha256": "fcfbabb335443b161b5117dd44be98694de97fee4f31a1880b316d5bb853e5ba"
+  "distributionStatus": "paused"
 }
