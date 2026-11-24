@@ -1,8 +1,8 @@
 {
-  "versionCode": 22,
-  "versionName": "2.1",
-  "releaseUrl": "https://github.com/bleynar/bleynar-app/releases/tag/v2.1",
-  "downloadUrl": "https://github.com/bleynar/bleynar-app/releases/download/v2.1/Bleynar-2.1.apk",
-  "updateUrl": "https://bleynar.github.io/bleynar-app/downloads/Bleynar.apk?v=22",
-  "sha256": "4b663bb6c0a2abea0bf90a9bc05feed965c52cf84914fd9336b612b6144ae4ff"
+  "versionCode": 23,
+  "versionName": "2.2",
+  "releaseUrl": "https://github.com/bleynar/bleynar-app/releases/tag/v2.2",
+  "downloadUrl": "https://github.com/bleynar/bleynar-app/releases/download/v2.2/Bleynar-2.2.apk",
+  "updateUrl": "https://bleynar.github.io/bleynar-app/downloads/Bleynar.apk?v=23",
+  "sha256": "0f5003f1af74dc5709d4ce61b0b89c92b2c911d26bbc1c6427fbba6a2fb459c3"
 }
