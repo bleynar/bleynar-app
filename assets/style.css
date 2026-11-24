@@ -476,3 +476,7 @@ footer span { font-weight: 640; }
 @media (prefers-reduced-motion: reduce) {
   .download:active { transform: none; }
 }
+
+.app-news-link{color:var(--gold)}
+@media(max-width:32rem){.nav nav{gap:.75rem}.nav .install-link{display:none}}
+@media(max-width:22rem){.nav nav{gap:.5rem}.nav .wordmark{gap:.25rem}.nav .yt{padding-inline:.4rem}footer .wrap{flex-wrap:wrap;gap:.35rem 1rem}}

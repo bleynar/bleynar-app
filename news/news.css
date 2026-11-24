@@ -1,0 +1,33 @@
+body{margin:0;background:#10141e;color:#f6f2e9}
+.news-shell{width:min(900px,calc(100% - 2 * clamp(14px,4vw,56px)));margin-inline:auto}
+.news-header{border-bottom:1px solid #303947;background:#151b27}
+.news-header .news-shell,.news-footer .news-shell{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:62px}
+.news-header a{display:inline-flex;align-items:center;gap:9px;color:inherit;text-decoration:none;min-height:44px}
+.news-header .home{font-size:1.3rem;font-weight:700}.news-header img{width:36px;height:36px}.news-header .app,.news-footer a{color:#ffd077}
+.news-main{padding:clamp(20px,4vw,46px) 0 52px}.news-main h1{font-size:clamp(1.85rem,4.6vw,3.4rem);line-height:1.1;letter-spacing:-.035em;margin:0 0 .65em}
+#issues{container:issues / inline-size;max-width:50rem;margin-inline:auto}
+.issue-card{background:#1a2230;border:1px solid #344155;border-radius:15px;margin:0 0 .65rem;padding:clamp(.78rem,1.8vw,1.22rem);scroll-margin-block-start:.8rem}
+.issue-card summary{display:grid;grid-template-columns:clamp(56px,11cqi,76px) minmax(0,1fr) 20px;align-items:center;gap:.55rem .85rem;cursor:pointer;list-style:none}.issue-card summary::-webkit-details-marker{display:none}
+.article-art{grid-column:1;grid-row:2;width:100%;height:clamp(48px,9cqi,66px);object-fit:contain;display:block;background:#131925;border-radius:7px}
+.stamp{grid-row:1;grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:.4rem;line-height:1.2;font-variant-numeric:tabular-nums}
+.stamp b{display:inline-block;color:#ffd077;border:1px solid #76603a;background:#332e25;border-radius:6px;padding:.25em .5em;font-size:.83rem;white-space:nowrap}
+.stamp time{display:inline-flex;align-items:center;gap:.42em;white-space:nowrap;color:#b9c5d5;font-size:.87rem}
+.stamp time:before{content:"";width:1em;height:1em;background:currentColor;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round'%3E%3Crect x='3' y='5' width='18' height='16' rx='2'/%3E%3Cpath d='M7 3v4m10-4v4M4 10h16'/%3E%3C/svg%3E") center/contain no-repeat}
+.issue-title{grid-row:2;grid-column:2;min-width:0;overflow-wrap:anywhere}.issue-title strong{font-size:clamp(1.02rem,2.65cqi,1.3rem);line-height:1.27}.withdrawn{display:block;color:#eec4a8;font-size:.78rem;margin:.3rem 0 0}
+.chevron{grid-row:2;grid-column:3;width:.5rem;height:.5rem;border:solid #b9c5d5;border-width:0 1.7px 1.7px 0;transform:rotate(45deg);justify-self:center}.issue-card[open] .chevron{transform:rotate(225deg)}
+.notes{border-top:1px solid #384455;margin-top:.82rem;padding-top:.08rem;max-width:100%}.notes h3{font-size:1rem;line-height:1.3;margin:.85em 0 .35em;color:#ffd077}
+.notes p,.patch-list{font-size:clamp(1rem,2.3cqi,1.12rem);line-height:1.48;margin:.4em 0 .7em;overflow-wrap:anywhere;max-width:69ch}.patch-list{padding-inline-start:1.17em}.patch-list li{margin:.36em 0}.patch-list li::marker{color:#eeeef0}
+.permalink{display:inline-flex;align-items:center;min-height:36px;color:#b7c5d6;font-size:.85rem;text-underline-offset:.22em}
+.archive-title{font-size:clamp(1.4rem,3.6vw,2rem);margin:1.35em 0 .55em}
+.news-header a:focus-visible,.permalink:focus-visible,.issue-card summary:focus-visible{outline:2px solid #ffd077;outline-offset:3px}
+/* All twenty issues use the same order in the open state. */
+.article-art{height:auto;aspect-ratio:3/2}
+.issue-card[open] summary{grid-template-columns:minmax(0,1fr) 20px;gap:.75rem .8rem}
+.issue-card[open] .stamp{grid-row:1}
+.issue-card[open] .article-art{grid-row:2;grid-column:1/-1;justify-self:center;width:min(100%,90vh,960px);width:min(100%,90svh,960px);height:auto;aspect-ratio:3/2;border-radius:9px;object-fit:contain}
+.issue-card[open] .issue-title{grid-row:3;grid-column:1}
+.issue-card[open] .issue-title strong{font-size:clamp(1.16rem,4cqi,1.85rem);line-height:1.2}
+.issue-card[open] .chevron{grid-row:3;grid-column:2}
+@media (prefers-reduced-motion:no-preference){.issue-card .chevron{transition:transform 210ms ease}}
+@media(max-width:340px){.news-shell{width:calc(100% - 18px)}.stamp b,.stamp time{font-size:.76rem}.issue-card summary{column-gap:.55rem}.news-header .app{font-size:.85rem}}
+
