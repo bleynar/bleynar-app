@@ -20,7 +20,7 @@
       else body.append(node('p','',note.text));
     }
     card.append(body);
-    const link=node('a','permalink','Ссылка на новость');link.href='#'+item.id;card.append(link);return card;
+    return card;
   }
   function render(feed){
     if(feed.schema!==1||!Array.isArray(feed.items)||!feed.items.length||!feed.items.every(i=>/^[a-z0-9_-]+$/.test(i.id)&&/^[a-z0-9_-]+$/.test(i.art)&&Array.isArray(i.changes)))return;

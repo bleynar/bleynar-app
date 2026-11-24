@@ -28,9 +28,8 @@ body{margin:0;background:#10141e;color:#f6f2e9}
 .chevron{grid-row:2;grid-column:3;width:.5rem;height:.5rem;border:solid #b9c5d5;border-width:0 1.7px 1.7px 0;transform:rotate(45deg);justify-self:center}.issue-card[open] .chevron{transform:rotate(225deg)}
 .notes{border-top:1px solid #384455;margin-top:.82rem;padding-top:.08rem;max-width:100%}.notes h3{font-size:1rem;line-height:1.3;margin:.85em 0 .35em;color:#ffd077}
 .notes p,.patch-list{font-size:clamp(1rem,2.3cqi,1.12rem);line-height:1.48;margin:.4em 0 .7em;overflow-wrap:anywhere;max-width:69ch}.patch-list{padding-inline-start:1.17em}.patch-list li{margin:.36em 0}.patch-list li::marker{color:#eeeef0}
-.permalink{display:inline-flex;align-items:center;min-height:36px;color:#b7c5d6;font-size:.85rem;text-underline-offset:.22em}
 .archive-title{font-size:clamp(1.4rem,3.6vw,2rem);margin:1.35em 0 .55em}
-.news-header a:focus-visible,.permalink:focus-visible,.issue-card summary:focus-visible{outline:2px solid #ffd077;outline-offset:3px}
+.news-header a:focus-visible,.issue-card summary:focus-visible{outline:2px solid #ffd077;outline-offset:3px}
 /* All twenty issues use the same order in the open state. */
 .article-art{height:auto;aspect-ratio:3/2}
 .issue-card[open] summary{grid-template-columns:minmax(0,1fr) 20px;gap:.75rem .8rem}
