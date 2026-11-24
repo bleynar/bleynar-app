@@ -7,7 +7,18 @@ body{margin:0;background:#10141e;color:#f6f2e9}
 .news-main{padding:clamp(20px,4vw,46px) 0 52px}.news-main h1{font-size:clamp(1.85rem,4.6vw,3.4rem);line-height:1.1;letter-spacing:-.035em;margin:0 0 .65em}
 #issues{container:issues / inline-size;max-width:50rem;margin-inline:auto}
 .issue-card{background:#1a2230;border:1px solid #344155;border-radius:15px;margin:0 0 .65rem;padding:clamp(.78rem,1.8vw,1.22rem);scroll-margin-block-start:.8rem}
-.issue-card summary{display:grid;grid-template-columns:clamp(56px,11cqi,76px) minmax(0,1fr) 20px;align-items:center;gap:.55rem .85rem;cursor:pointer;list-style:none}.issue-card summary::-webkit-details-marker{display:none}
+.issue-card > summary {
+  display: grid;
+  grid-template-columns: clamp(56px, 11cqi, 76px) minmax(0, 1fr) 20px;
+  align-items: center;
+  gap: .55rem .85rem;
+  cursor: pointer;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.issue-card summary::-webkit-details-marker{display:none}
 .article-art{grid-column:1;grid-row:2;width:100%;height:clamp(48px,9cqi,66px);object-fit:contain;display:block;background:#131925;border-radius:7px}
 .stamp{grid-row:1;grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:.4rem;line-height:1.2;font-variant-numeric:tabular-nums}
 .stamp b{display:inline-block;color:#ffd077;border:1px solid #76603a;background:#332e25;border-radius:6px;padding:.25em .5em;font-size:.83rem;white-space:nowrap}

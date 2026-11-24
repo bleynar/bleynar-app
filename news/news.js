@@ -7,7 +7,7 @@
     const card=node('details','issue-card');card.id=item.id;card.open=lead;
     const head=node('summary'),photo=node('img','article-art'),stamp=node('span','stamp'),title=node('span','issue-title');
     const headline=item.title.split(' · выпуск отозван')[0];
-    photo.src='art/'+item.art+'.webp';photo.alt='Иллюстрация к новости «'+headline+'»';photo.width=960;photo.height=640;if(!lead)photo.loading='lazy';
+    photo.src='art/'+item.art+'.webp';photo.alt='Иллюстрация к новости «'+headline+'»';photo.width=960;photo.height=640;photo.draggable=false;if(!lead)photo.loading='lazy';
     const day=node('time','',dates.format(new Date(item.date+'T12:00:00Z')).replace(/ г\.$/,''));day.dateTime=item.date;
     stamp.append(node('b','',item.type==='release'?'Версия '+item.version:'Объявление'),day);
     title.append(node('strong','',headline));if(headline!==item.title)title.append(node('small','withdrawn','Выпуск отозван'));
