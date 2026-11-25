@@ -3,6 +3,7 @@
   const service = 'https://bleynar-download-stats.fabulousonyx.chatgpt.site';
   const link = document.querySelector('[data-download]');
   const total = document.getElementById('download-total');
+  const footerSlot = document.querySelector('[data-download-count]');
   const version = document.querySelector('[data-version]').textContent.trim();
   const checksum = document.getElementById('checksum').textContent.trim();
   const normalText = link.textContent;
@@ -16,6 +17,7 @@
     if (!Number.isSafeInteger(data.unique) || data.unique < 0) throw new Error('Invalid total');
     shownTotal = Math.max(shownTotal, data.unique);
     total.textContent = shownTotal.toLocaleString('ru-RU');
+    if (footerSlot) footerSlot.hidden = false;
   }
 
   async function refresh() {
@@ -28,11 +30,11 @@
       serviceAvailable = true;
     } catch {
       serviceAvailable = false;
-      if (shownTotal < 0) total.textContent = 'Нет данных';
     } finally { clearTimeout(timeout); }
   }
   refresh();
   window.addEventListener('pageshow', event => { if (event.persisted) refresh(); });
+  window.addEventListener('online', refresh);
 
   if (!window.indexedDB || !window.crypto?.subtle || !window.AbortController ||
       !URL.createObjectURL || !('download' in link) || navigator.globalPrivacyControl ||
@@ -102,7 +104,6 @@
   }
   entry('receipt').then(confirmDownload).catch(() => {});
   window.addEventListener('online', () => {
-    refresh();
     entry('receipt').then(confirmDownload).catch(() => {});
   });
 

@@ -229,14 +229,6 @@ h1 span {
   color: #9295a9;
 }
 
-.download-stats {
-  margin-top: .9rem;
-  color: var(--muted);
-  font-size: .9375rem;
-  line-height: 1.55;
-}
-.download-stats strong { color: var(--text); font-variant-numeric: tabular-nums; }
-.download-stats + .release { margin-top: .4rem; }
 .download[aria-busy="true"] { cursor: progress; }
 
 /* Both the orbit and the portrait use this square as their coordinate system. */
@@ -427,7 +419,7 @@ h1 span {
 }
 footer { border-top: 1px solid var(--line); }
 footer .wrap { min-height: 4.25rem; padding-block: .45rem; font-size: .935rem; }
-footer span { font-weight: 640; }
+.footer-signature > span { font-weight: 640; }
 .footer-signature { display: flex; align-items: baseline; flex-wrap: wrap; gap: .15rem .65rem; }
 .visit-count { color: #8991a4; font-size: .75rem; font-weight: 400; font-variant-numeric: tabular-nums; white-space: nowrap; }
 

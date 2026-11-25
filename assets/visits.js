@@ -1,8 +1,9 @@
 (() => {
   'use strict';
   const counter = document.querySelector('footer .visit-count');
-  if (!counter || location.origin !== 'https://bleynar.github.io' ||
+  if (location.origin !== 'https://bleynar.github.io' ||
       !/^\/bleynar-app\/(?:news\/)?(?:index\.html)?$/.test(location.pathname)) return;
+  const visitTotals = counter?.querySelector('[data-visit-totals]') || counter;
 
   const endpoint = 'https://bleynar-download-stats.fabulousonyx.chatgpt.site/visits';
   const network = { mode: 'cors', credentials: 'omit', cache: 'no-store', referrerPolicy: 'no-referrer' };
@@ -52,11 +53,12 @@
       if (document.visibilityState !== 'visible') return;
       let response;
       if (visitor) response = await totals(visitor).catch(() => null);
+      if (!counter) return;
       if (!response?.ok) response = await totals();
       if (!response.ok) return;
       const { total, day } = await response.json();
       if (!Number.isSafeInteger(total) || !Number.isSafeInteger(day) || day < 0 || total < day) return;
-      counter.textContent = numbers.format(total) + ' · ' + numbers.format(day);
+      visitTotals.textContent = numbers.format(total) + ' · ' + numbers.format(day);
       counter.hidden = false;
     } catch { /* Keep the last real figures until the connection returns. */ }
     finally { busy = false; }

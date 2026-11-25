@@ -74,10 +74,10 @@
   }
   </script>
   <link rel="icon" href="assets/icon.png?brand=2">
-  <link rel="stylesheet" href="assets/style.css?layout=5">
+  <link rel="stylesheet" href="assets/style.css?layout=6">
   <script src="assets/site.js" defer></script>
-  <script src="assets/downloads.js" defer></script>
-  <script src="assets/visits.js" defer></script>
+  <script src="assets/downloads.js?footer=2" defer></script>
+  <script src="assets/visits.js?footer=2" defer></script>
 </head>
 <body>
   <header class="mast">
@@ -102,7 +102,6 @@
               <a class="download" data-download href="https://bleynar.github.io/bleynar-app/downloads/Bleynar.apk?v=24" download="Bleynar-2.3.apk">Скачать APK</a>
               <a class="release-link" data-release href="https://github.com/bleynar/bleynar-app/releases/tag/v2.3">О релизе на GitHub</a>
             </div>
-            <p class="download-stats" role="status">Уникальные скачивания <strong id="download-total">—</strong></p>
             <p class="release"><span>Версия <b data-version>2.3</b></span><span data-size>11,2 МБ</span><span>Android 5.0+</span></p>
           </div>
         </div>
@@ -146,6 +145,15 @@
       </div>
     </section>
   </main>
-  <footer><div class="wrap"><div class="footer-signature"><span>Bleynar</span><small class="visit-count" hidden></small></div><a href="news/">Новости приложения</a><a href="https://github.com/bleynar/bleynar-app/releases">Все версии на GitHub</a></div></footer>
+  <footer>
+    <div class="wrap">
+      <div class="footer-signature">
+        <span>Bleynar</span>
+        <small class="visit-count" hidden><span data-visit-totals></span><span data-download-count hidden> · <span id="download-total"></span></span></small>
+      </div>
+      <a href="news/">Новости приложения</a>
+      <a href="https://github.com/bleynar/bleynar-app/releases">Все версии на GitHub</a>
+    </div>
+  </footer>
 </body>
 </html>
