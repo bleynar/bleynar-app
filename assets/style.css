@@ -428,6 +428,8 @@ h1 span {
 footer { border-top: 1px solid var(--line); }
 footer .wrap { min-height: 4.25rem; padding-block: .45rem; font-size: .935rem; }
 footer span { font-weight: 640; }
+.footer-signature { display: flex; align-items: baseline; flex-wrap: wrap; gap: .15rem .65rem; }
+.visit-count { color: #8991a4; font-size: .75rem; font-weight: 400; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* The installation guide and file details need more width than the hero art. */
 @media (max-width: 53rem) {
